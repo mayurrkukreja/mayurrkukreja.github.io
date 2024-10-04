@@ -1,0 +1,88 @@
+<nav [@animateMenu] class="navbar main-navbar on-top" [class.nav-shadow]='this.pageYPosition>0'>
+    <div class="container">
+        <a class="navbar-brand text-light" [routerLink]="'inicio'">
+            <img src='assets/images/me/mayur_kukreja.jpeg' width='45' />
+        </a>
+        <ul ngbNav #nav="ngbNav" class="menu-ul">
+            <li ngbNavItem (click)='analyticsService.sendAnalyticEvent("click_about", "menu", "click")'>
+                <a ngbNavLink (click)='scroll("about")'><span class="underline nav-text"> About me</span></a>
+                <ng-template ngbNavContent>First content</ng-template>
+            </li>
+            <li ngbNavItem (click)='analyticsService.sendAnalyticEvent("click_experience", "menu", "click")'>
+                <a ngbNavLink (click)='scroll("jobs")'><span class="underline nav-text"> Experience</span></a>
+                <ng-template ngbNavContent>Second content</ng-template>
+            </li>
+            <li ngbNavItem (click)='analyticsService.sendAnalyticEvent("click_jobs", "menu", "click")'>
+                <a ngbNavLink (click)='scroll("projects")'><span class="underline nav-text">Projects</span></a>
+                <ng-template ngbNavContent>Second content</ng-template>
+            </li>
+            <li ngbNavItem (click)='analyticsService.sendAnalyticEvent("click_contact", "menu", "click")'>
+                <a ngbNavLink (click)='scroll("contact")'><span class="underline nav-text">Contact</span></a>
+                <ng-template ngbNavContent>Second content</ng-template>
+            </li>
+            <li ngbNavItem>
+                <a (click)="downloadCV()" class="main-btn cv-btn" ngbNavLink>
+                 C.V
+                </a>
+            </li>
+
+            <li ngbNavItem>
+                <!-- <a (click)="downloadResume()" class="main-btn cv-btn" ngbNavLink>
+                    Resume
+                </a> -->
+            </li>
+        </ul>
+        <div class="menu-wrapper">
+            <div [class.animate]='responsiveMenuVisible' (click)='responsiveMenuVisible = !responsiveMenuVisible' class="hamburger-menu"></div>
+        </div>
+        <div class="menu-responsive" [ngStyle]="{'pointer-events': !responsiveMenuVisible ? 'none' : '' }">
+            <aside [class.aside-show]='responsiveMenuVisible' [class.nav-shadow]='this.pageYPosition>0' class="on-top">
+                <nav>
+                    <ol>
+                        <li>
+                            <a (click)='scroll("about")'>
+                                <span>01. </span> About me
+                            </a>
+                        </li>
+                        <li >
+                            <a (click)='scroll("jobs")'>
+                                <span>02. </span> Experience
+                            </a>
+                        </li>
+                        <li >
+                          <a (click)='scroll("projects")'>
+                              <span>03. </span> Projects
+                          </a>
+                      </li>
+                      <li >
+                        <a (click)='scroll("projects")'>
+                            <span>04. </span> Contact
+                        </a>
+                      </li>
+                         
+                      <li>
+                        <a (click)="downloadCV()" class="main-btn cv-btn">
+                          C.V
+                        </a>
+                    </li>
+
+
+                    <!-- <li>
+                        <a (click)="downloadResume()" class="main-btn cv-btn">
+                          Resume
+                        </a>
+                    </li> -->
+
+                      
+                    
+
+                      
+                    
+                    
+
+                    </ol>
+                </nav>
+            </aside>
+        </div>
+    </div>
+</nav>
