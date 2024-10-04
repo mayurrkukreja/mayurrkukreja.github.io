@@ -9,7 +9,7 @@ import { Title, Meta } from '@angular/platform-browser';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent implements OnInit {
-  title = 'muffeez-portfolio';
+  title = 'mayur-portfolio';
 
   constructor(
     private titleService: Title,
