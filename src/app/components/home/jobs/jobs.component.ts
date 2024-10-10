@@ -26,7 +26,7 @@ export class JobsComponent implements OnInit {
     {
       Tab: 'Deloitte',
       Title: 'Consulting Analyst',
-      Date: 'Sep 2023 -  Jan 2023',
+      Date: 'Sep 2023 -  Dec 2023',
       Description: [
         'Consulting Analyst at Deloitte with a focus on developing and maintaining web applications using Salesforce, ReactJs, Apex Programming, and Lightning Web Components',
         'Managed a Salesforce app with 50,000+ records using Apex Programming and SOQL Queries and following Development best practices',
